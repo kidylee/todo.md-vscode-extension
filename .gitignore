@@ -4,8 +4,6 @@
 ### Code ###
 # Visual Studio Code - https://code.visualstudio.com/
 .settings/
-tsconfig.json
-jsconfig.json
 
 ### Linux ###
 *~

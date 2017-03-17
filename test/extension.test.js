@@ -21,4 +21,10 @@ suite("Extension Tests", function() {
         assert.equal(-1, [1, 2, 3].indexOf(5));
         assert.equal(-1, [1, 2, 3].indexOf(0));
     });
+
+    test("todo-md",()=>{
+        todoMD('./TestWorkSpace/TODO.MD',(done)=>{
+            console.log(done)
+        })
+    })
 });

@@ -35,6 +35,6 @@
     "@types/mocha": "^2.2.32"
   },
   "dependencies": {
-    "nodegit": "^0.17.0"
+    "todo.git": "^1.0.4"
   }
 }

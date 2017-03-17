@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 var vscode = require('vscode');
 var fs = require('fs');
+var todo = require('todo.git');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -19,7 +20,8 @@ function activate(context) {
 
         // Display a message box to the user
         vscode.window.showInformationMessage('Todo Git');
-    });
+
+        
 
     context.subscriptions.push(disposable);
 }

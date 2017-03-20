@@ -20,7 +20,8 @@ function activate(context) {
     var disposable = vscode.commands.registerCommand('extension.gitCommitComment', function () {
         // The code you place here will be executed every time your command is executed
 
-
+        let name = vscode.workspace.getConfiguration("todo.md").get('name',"TODO.md");
+        
 
         function parseDone(content) {
             var done = /(?=\s*)[-\*] {0,2}\[x\].*$/gmi;
@@ -41,22 +42,22 @@ function activate(context) {
                 }
 
             } else {
-                vscode.window.showInformationMessage("Can't find ether TODO.MD or git repository.");
+                vscode.window.showInformationMessage("Can't find ether TODO.md or git repository.");
                 return;
             }
         }
 
 
-        fs.readFile(path.join(rootPath, "TODO.MD"), "utf-8", (err, data) => {
+        fs.readFile(path.join(rootPath, name), "utf-8", (err, data) => {
             if (err) {
-                vscode.window.showErrorMessage("Can't find TODO.MD in your workspace.")
+                vscode.window.showErrorMessage("Can't find TODO.md in your workspace.")
                 return;
             }
 
             var newDoneList = parseDone(data)
 
             const Git = require('simple-git')(rootPath)
-            Git.show(['HEAD:TODO.MD'], (err, result) => {
+            Git.show(['HEAD:' + name], (err, result) => {
                 if (err) {
                     vscode.window.showErrorMessage(err)
                     return;

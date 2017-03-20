@@ -1,6 +1,6 @@
 # todo-md README
 
-This is the README for your extension "todo-md". After writing up a brief description, we recommend including the following sections.
+This is a 
 
 ## Features
 
